@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Patch Pandora Box - RETROTOPLAY.ON</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>@RETROTOPLAY.ON</h1>
+    <p>Transforme seu Batocera em uma Pandora Box moderna com sistema de créditos!</p>
+  </header>
+
+  <main>
+    <section class="highlight">
+      <h2>📦 O que é esse Patch?</h2>
+      <p>Um sistema completo de controle de <span class="neon-green">créditos</span>, diretamente na interface de seleção de jogos do Batocera. Estilo Pandora Box com funções exclusivas!</p>
+    </section>
+
+    <section>
+      <h2>⚙️ Como funciona?</h2>
+      <ul>
+        <li>Créditos exibidos na tela inicial.</li>
+        <li>Jogos só iniciam com créditos disponíveis.</li>
+        <li>Botão <strong>Select</strong> adiciona créditos.</li>
+        <li>Botão <strong>R3</strong> consome crédito.</li>
+      </ul>
+
+      <p>O sistema garante que o <strong>jogo só seja iniciado no momento exato em que o crédito é adicionado</strong>. Isso evita que o crédito seja inserido antes da hora ou sem supervisão, oferecendo mais controle para operadores que utilizam o sistema com fins comerciais.</p>
+
+      <p>Também há um <strong>controle total de créditos acumulados</strong>: ao pressionar <strong>L1 + R1 por 5 segundos</strong>, é exibida a quantidade total de créditos já colocados no sistema. Ideal para quem utiliza a máquina com sistema de <strong>divisão de lucros por porcentagem</strong>.</p>
+    </section>
+
+    <section class="highlight">
+      <h2>🎮 Comportamento por tipo de jogo</h2>
+      <div class="game-types">
+        <div>
+          <h3>Jogos de Arcade (MAME / FBNeo / Naomi / Atomiswave...)</h3>
+          <p>A cada toque no <strong>R3</strong>, um pulso de moeda é enviado ao jogo e um crédito é subtraído.</p>
+        </div>
+        <div>
+          <h3>Jogos de Plataforma (SNES, Mega Drive, NES, N64, PSX...)</h3>
+          <p>Para consoles como <strong>Super Nintendo, Mega Drive, Nintendinho, Nintendo 64, PlayStation 1</strong> e similares, o botão <strong>R3 libera minutos de jogo</strong>, com base no tempo configurado por crédito. Ideal para jogos que não usam sistema de fichas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>🚪 Sair do jogo com R3</h2>
+      <p>Ao segurar o botão R3 pelo tempo configurado, o jogo é fechado automaticamente, retornando à tela inicial.</p>
+    </section>
+
+    <section class="highlight">
+      <h2>🔧 Configuração do Sistema</h2>
+      <p>Você pode ajustar todas as funções do sistema:</p>
+      <ul>
+        <li><strong>Tempo de pressão do R3</strong> para sair do jogo</li>
+        <li><strong>Duração do crédito</strong> para jogos de plataforma</li>
+        <li>Habilitar ou não o uso de <strong>bezels personalizados</strong></li>
+      </ul>
+
+      <div class="config-image">
+        <img src="./img/config.png" alt="Interface de configuração" />
+        <p class="caption">Interface simples e funcional, pronta para o cliente ajustar facilmente.</p>
+      </div>
+    </section>
+
+    <section class="simulador">
+      <h2>🎲 @JCGAMESCLASSICOS</h2>
+   <!--   <p><strong>Créditos Atuais:</strong> <span id="creditDisplay">0</span></p>
+      <button id="addCreditBtn">➕ Adicionar Crédito</button>
+      <button id="useCreditBtn">🎮 Usar Crédito (R3)</button>-->
+
+      <!-- Áudio escondido -->
+      <audio id="coinSound" src="https://www.myinstants.com/media/sounds/coin_1.mp3" preload="auto"></audio>
+      <audio id="clickSound" src="https://www.myinstants.com/media/sounds/button-click.mp3" preload="auto"></audio>
+    </section>
+
+    <section class="whatsapp">
+      <a id="whatsappLink" href="https://wa.me/5541998205080" target="_blank" rel="noopener noreferrer">
+        <img src="./img/whatsapp.png" alt="WhatsApp" />
+        <span>Fale agora pelo WhatsApp</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 @RETROTOPLAY.ON — Patch Pandora Box para Batocera</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+:root {
+    --neon-green: #00ff88;
+    --neon-purple: #8f00ff;
+    --dark-bg: #121618;
+    --text-light: #e0e8e8;
+    --box-bg: #1b2124;
+    --border-color: #2a3438;
+    --spacing: 24px;
+    --radius: 10px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: var(--spacing);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+    margin-top: 8px;
+}
+
+section {
+    margin-bottom: var(--spacing);
+    padding-bottom: var(--spacing);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.highlight {
+    background-color: rgba(255, 255, 255, 0.04);
+    padding: var(--spacing);
+    border-left: 5px solid var(--neon-purple);
+    border-radius: var(--radius);
+}
+
+ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+h2 {
+    color: var(--neon-green);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: var(--neon-purple);
+    margin-bottom: 6px;
+}
+
+.game-types {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.game-types div {
+    flex: 1;
+    min-width: 240px;
+    background-color: var(--box-bg);
+    padding: 15px;
+    border: 1px solid var(--neon-purple);
+    border-radius: var(--radius);
+}
+
+.neon-green {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+}
+
+.neon-purple {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+.simulador {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Botões com animação neon recursiva */
+@-webkit-keyframes neonPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 5px var(--neon-green),
+            0 0 10px var(--neon-green),
+            0 0 20px var(--neon-green),
+            0 0 40px var(--neon-green);
+        color: var(--neon-green);
+        background-color: var(--box-bg);
+        border-color: var(--neon-green);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow:
+            0 0 10px var(--neon-green),
+            0 0 20px var(--neon-green),
+            0 0 30px var(--neon-green),
+            0 0 50px var(--neon-green);
+        color: #aaffcc;
+        background-color: #142414;
+        border-color: #aaffcc;
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 5px var(--neon-green),
+            0 0 10px var(--neon-green),
+            0 0 20px var(--neon-green),
+            0 0 40px var(--neon-green);
+        color: var(--neon-green);
+        background-color: var(--box-bg);
+        border-color: var(--neon-green);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow:
+            0 0 10px var(--neon-green),
+            0 0 20px var(--neon-green),
+            0 0 30px var(--neon-green),
+            0 0 50px var(--neon-green);
+        color: #aaffcc;
+        background-color: #142414;
+        border-color: #aaffcc;
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+}
+
+.simulador button, 
+.whatsapp a {
+    animation: neonPulse 3s ease-in-out infinite;
+    -webkit-animation: neonPulse 3s ease-in-out infinite;
+}
+
+.simulador button {
+    background-color: var(--box-bg);
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 12px 24px;
+    margin: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: 0.3s ease;
+    min-width: 160px;
+    user-select: none;
+}
+
+.simulador button:hover {
+    background-color: var(--neon-green);
+    color: #000;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    font-size: 0.95rem;
+    color: #888;
+}
+
+.config-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.config-image img {
+    max-width: 100%;
+    border: 2px solid var(--neon-purple);
+    border-radius: var(--radius);
+    box-shadow: 0 0 20px #8f00ff55;
+}
+
+.caption {
+    margin-top: 8px;
+    color: #999;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.whatsapp {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.whatsapp a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--box-bg);
+    border: 2px solid var(--neon-green);
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    color: var(--neon-green);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.whatsapp a:hover {
+    background-color: var(--neon-green);
+    color: #000;
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.whatsapp img {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 5px var(--neon-green));
+}
+
+/* Respeita preferências de redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+    .simulador button, 
+    .whatsapp a {
+        animation: none !important;
+        -webkit-animation: none !important;
+    }
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .game-types {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .simulador button {
+        width: 100%;
+        padding: 14px 0;
+        margin: 6px 0;
+    }
+
+    .whatsapp a {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+}
