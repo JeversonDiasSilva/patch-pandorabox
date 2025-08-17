@@ -1,44 +1,193 @@
-const creditDisplay = document.getElementById('creditDisplay');
-const addCreditBtn = document.getElementById('addCreditBtn');
-const useCreditBtn = document.getElementById('useCreditBtn');
-const coinSound = document.getElementById('coinSound');
-const whatsappLink = document.getElementById('whatsappLink');
-const clickSound = document.getElementById('clickSound');
-
-let credits = 0;
-
-function updateDisplay() {
-  creditDisplay.textContent = credits;
+:root {
+    --neon-green: #00ff88;
+    --neon-purple: #8f00ff;
+    --dark-bg: #121618;
+    --text-light: #e0e8e8;
+    --box-bg: #1b2124;
+    --border-color: #2a3438;
+    --spacing: 24px;
+    --radius: 10px;
 }
 
-function addCredit() {
-  credits++;
-  updateDisplay();
-  coinSound.currentTime = 0;
-  coinSound.play();
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-function useCredit() {
-  if (credits > 0) {
-    credits--;
-    updateDisplay();
-    clickSound.currentTime = 0;
-    clickSound.play();
-  } else {
-    alert("Sem créditos disponíveis!");
-  }
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-addCreditBtn.addEventListener('click', addCredit);
-useCreditBtn.addEventListener('click', useCredit);
+header {
+    text-align: center;
+    margin-bottom: var(--spacing);
+}
 
-// Tocar som ao clicar no WhatsApp, antes de abrir
-whatsappLink.addEventListener('click', function(e) {
-  e.preventDefault();
-  coinSound.currentTime = 0; // Som de crédito aqui
-  coinSound.play();
+header h1 {
+    font-size: 2.8rem;
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+}
 
-  setTimeout(() => {
-    window.open(this.href, '_blank', 'noopener');
-  }, 400);
-});
+header p {
+    font-size: 1.2rem;
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+    margin-top: 8px;
+}
+
+section {
+    margin-bottom: var(--spacing);
+    padding-bottom: var(--spacing);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.highlight {
+    background-color: rgba(255, 255, 255, 0.04);
+    padding: var(--spacing);
+    border-left: 5px solid var(--neon-purple);
+    border-radius: var(--radius);
+}
+
+ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+h2 {
+    color: var(--neon-green);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: var(--neon-purple);
+    margin-bottom: 6px;
+}
+
+.game-types {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.game-types div {
+    flex: 1;
+    min-width: 240px;
+    background-color: var(--box-bg);
+    padding: 15px;
+    border: 1px solid var(--neon-purple);
+    border-radius: var(--radius);
+}
+
+.neon-green {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+}
+
+.neon-purple {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* Simulador de créditos */
+.simulador {
+    margin-top: var(--spacing);
+    padding: var(--spacing);
+    background-color: var(--box-bg);
+    border: 1px solid var(--neon-green);
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.simulador p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.simulador button {
+    background-color: var(--neon-green);
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--dark-bg);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.simulador button:hover {
+    background-color: #00cc6a;
+}
+
+/* WhatsApp link */
+.whatsapp {
+    margin-top: var(--spacing);
+    text-align: center;
+}
+
+.whatsapp a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 0 10px #25D366;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp a:hover {
+    background-color: #1ebe57;
+}
+
+.whatsapp img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* Imagem da configuração */
+.config-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.config-image img {
+    max-width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 0 15px var(--neon-purple);
+}
+
+.config-image .caption {
+    font-size: 0.9rem;
+    color: var(--neon-green);
+    margin-top: 8px;
+    font-style: italic;
+}
